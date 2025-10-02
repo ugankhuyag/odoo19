@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="purchase_order_form_meat_mrp" model="ir.ui.view">
+            <field name="name">purchase.order.inherited.form.mrp</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='button_cancel']" position="after">
+                    <button name="create_mrp_from_purchase" type="object" string="Create MRP" class="btn-success"/>
+                </xpath>
+
+                <xpath expr="//sheet/notebook/page/field/list/field[@name='product_id']" position="after"><field name="for_production" options="{'style': 'color: #0066cc;'}" widget="boolean" class="text-success"/>
+                </xpath>
+
+                <xpath expr="//sheet/notebook/page/field/list/field[@name='product_qty']" position="after"><field name="production_doc_number" readonly="1" widget="mrp_production_link"/> options="{'style': 'color: #0066cc;'}"/></xpath>
+                </field>
+        </record>
+
+        <record id="mrp_production_form_meat_mrp" model="ir.ui.view">
+            <field name="name">mrp.production.inherited.form.mrp</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <!-- Your modifications here -->
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="purchase_order_id"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

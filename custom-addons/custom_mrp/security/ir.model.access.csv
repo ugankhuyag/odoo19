@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mrp_production_executor,mrp.production,mrp_production,mrp.group_mrp_executor,1,1,1,0
+purchase_order_executor,purchase.order,purchase.order,mrp.group_mrp_executor,1,1,1,1
