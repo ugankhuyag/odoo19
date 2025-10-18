@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_category_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.category.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="stock_account.view_category_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_stock_valuation_account_id']" position="after">
+                <group name="mrp_accounting" string='MRP Accounting' colspan="4">
+                    <field name="is_mrp_accounting"/>
+                    <field name="property_stock_journal_id"/>
+                    <field name="mrp_income_account_id" invisible="not is_mrp_accounting"/>
+                    <field name="mrp_expense_account_id" invisible="not is_mrp_accounting"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
