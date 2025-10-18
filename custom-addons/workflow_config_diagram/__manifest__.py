@@ -1,5 +1,5 @@
 {
-    'name': 'Custom MRP',
+    'name': 'workflow config diagram',
     'version': '19.0.1.0.0',
     'category': 'Manufacturing',
     'summary': 'Custom Manufacturing Extensions',
@@ -22,10 +22,10 @@
         'sale_mrp',
     ],
     'data': [
-        'security/mrp_security.xml',
-        'views/mrp_production_views.xml',
-        'views/product_category_views.xml',
-        'data/ir_cron.xml'
+        'security/workflow_config_security.xml',
+        'views/workflow_config_views.xml',
+        #
+        # 'data/ir_cron.xml'
 
         # 'security/ir.model.access.csv',
         # 'data/custom_data.xml',

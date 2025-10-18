@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_workflow_config_tree" model="ir.ui.view">
+            <field name="name">workflow.config.tree</field>
+            <field name="model">workflow.config</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="department_id"/>
+                    <field name="template_id"/>
+                    <field name="company_id"/>
+                    <field name="is_active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_workflow_config_form" model="ir.ui.view">
+            <field name="name">workflow.config.form</field>
+            <field name="model">workflow.config</field>
+            <page name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="model_id"/>
+                                <field name="department_id"/>
+                            </group>
+                            <group>
+                                <field name="template_id"/>
+                                <field name="company_id"/>
+                                <field name="is_active"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                                <page string = 'Workflow'>
+                                    <field name ="line_ids" nolabel="1" colspan="4">
+                                    </field>
+                                    </page>
+                        </notebook>
+                    </sheet>
+                </form>
+        </record>
+
+        <!-- Action -->
+        <record id="action_workflow_config" model="ir.actions.act_window">
+            <field name="name">Workflow Configuration</field>
+            <field name="res_model">workflow.config</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem
+            id="menu_workflow_config"
+            name="Workflow Configuration"
+            action="action_workflow_config"
+            parent="your_parent_menu_id"
+            sequence="10"/>
+    </data>
+</odoo>

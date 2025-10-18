@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="res_group_privilege_workflow" model="res.groups.privilege">
+        <field name="name">Workflow Configuration</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="group_workflow_manager" model="res.groups">
+        <field name="name">Workflow Manager</field>
+        <field name="privilege_id" ref="res_group_privilege_workflow"/>
+    </record>
+
+</data>
+</odoo>
